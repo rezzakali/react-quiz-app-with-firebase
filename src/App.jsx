@@ -1,12 +1,13 @@
 import React from 'react';
 import Layout from './components/Layout';
-import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 function App() {
   return (
     <Layout>
       {/* <Home /> */}
-      <Signup />
+      {/* <Signup /> */}
+      <Login />
     </Layout>
   );
 }

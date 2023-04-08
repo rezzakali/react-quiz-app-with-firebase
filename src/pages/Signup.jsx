@@ -1,4 +1,5 @@
 import React from 'react';
+import signupImage from '../assets/images/signup.svg';
 import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
 import Form from '../components/Form';
@@ -13,9 +14,10 @@ function Signup() {
     <React.Fragment>
       <h1>Create an account</h1>
       <div className={styles.column}>
-        <Illustration />
+        <Illustration illustration={signupImage} alt="Signup" />
         <Form className={signUpStyles.signup}>
           <TextInput type="text" placeholde="Enter name" icon="person" />
+
           <TextInput
             type="text"
             placeholde="Enter email"
@@ -29,10 +31,14 @@ function Signup() {
             placeholde="Confirm password"
             icon="lock_clock"
           />
+
           <Checkbox text="I agree to the Terms & Conditions" />
+
           <Button>Submit now</Button>
 
-          <Info text="Already have an account?" />
+          <Info text="Already have an account?">
+            <a href="login.html">Login</a> instead.
+          </Info>
         </Form>
       </div>
     </React.Fragment>
