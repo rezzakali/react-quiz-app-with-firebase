@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './components/Layout';
-import Quiz from './pages/Quiz';
+import Result from './pages/Result';
 
 function App() {
   return (
@@ -8,7 +8,8 @@ function App() {
       {/* <Home /> */}
       {/* <Signup /> */}
       {/* <Login /> */}
-      <Quiz />
+      {/* <Quiz /> */}
+      <Result />
     </Layout>
   );
 }
