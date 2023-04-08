@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import loginImage from '../assets/images/login.svg';
 import Button from '../components/Button';
 import Form from '../components/Form';
@@ -28,7 +29,7 @@ function Login() {
             <span> Submit now</span>
           </Button>
           <Info text={`Don't have an account? `}>
-            <a href="signup.html">Signup</a> instead.
+            <Link to="/signup">Signup</Link> instead.
           </Info>
         </Form>
       </div>

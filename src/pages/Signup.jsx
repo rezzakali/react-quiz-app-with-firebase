@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import signupImage from '../assets/images/signup.svg';
 import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
@@ -39,7 +40,7 @@ function Signup() {
           </Button>
 
           <Info text="Already have an account?">
-            <a href="login.html">Login</a> instead.
+            <Link to="/login">Login</Link> instead.
           </Info>
         </Form>
       </div>
