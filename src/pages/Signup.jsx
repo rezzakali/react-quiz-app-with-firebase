@@ -1,0 +1,42 @@
+import React from 'react';
+import Button from '../components/Button';
+import Checkbox from '../components/Checkbox';
+import Form from '../components/Form';
+import Illustration from '../components/Illustration';
+import Info from '../components/Info';
+import TextInput from '../components/TextInput';
+import styles from '../styles/Column.module.css';
+import signUpStyles from '../styles/Signup.module.css';
+
+function Signup() {
+  return (
+    <React.Fragment>
+      <h1>Create an account</h1>
+      <div className={styles.column}>
+        <Illustration />
+        <Form className={signUpStyles.signup}>
+          <TextInput type="text" placeholde="Enter name" icon="person" />
+          <TextInput
+            type="text"
+            placeholde="Enter email"
+            icon="alternate_email"
+          />
+
+          <TextInput type="password" placeholde="Enter password" icon="lock" />
+
+          <TextInput
+            type="password"
+            placeholde="Confirm password"
+            icon="lock_clock"
+          />
+          <Checkbox text="I agree to the Terms & Conditions" />
+          <Button>Submit now</Button>
+
+          <Info text="Already have an account?" />
+        </Form>
+      </div>
+    </React.Fragment>
+  );
+}
+
+export default Signup;
