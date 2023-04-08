@@ -24,7 +24,9 @@ function Login() {
 
           <TextInput type="text" placeholder="Enter password" icon="lock" />
 
-          <Button>Submit now</Button>
+          <Button>
+            <span> Submit now</span>
+          </Button>
           <Info text={`Don't have an account? `}>
             <a href="signup.html">Signup</a> instead.
           </Info>

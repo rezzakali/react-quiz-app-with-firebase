@@ -34,7 +34,9 @@ function Signup() {
 
           <Checkbox text="I agree to the Terms & Conditions" />
 
-          <Button>Submit now</Button>
+          <Button>
+            <span> Submit now </span>
+          </Button>
 
           <Info text="Already have an account?">
             <a href="login.html">Login</a> instead.
