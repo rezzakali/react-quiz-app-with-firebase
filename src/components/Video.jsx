@@ -1,20 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import videoThumbnail from '../assets/images/3.jpg';
 import styles from '../styles/Video.module.css';
 
-function Video() {
+function Video({ title, noq, id }) {
   return (
-    <Link to="/quiz">
-      <div className={styles.video}>
-        <img src={videoThumbnail} alt="thumbnail" />
-        <p>#23 React Hooks Bangla - React useReducer hook Bangla</p>
-        <div className={styles.qmeta}>
-          <p>10 Questions</p>
-          <p>Score : Not taken yet</p>
-        </div>
+    <div className={styles.video}>
+      <img
+        src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`}
+        alt={title}
+      />
+      <p>{title}</p>
+      <div className={styles.qmeta}>
+        <p>{noq} Questions</p>
+        <p>Total Score : {noq * 5}</p>
       </div>
-    </Link>
+    </div>
   );
 }
 
