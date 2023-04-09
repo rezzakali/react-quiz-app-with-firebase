@@ -6,17 +6,17 @@ import {
   signOut,
   updateProfile,
 } from 'firebase/auth';
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../firebase';
 
-const AuthContext = createContext();
+const AuthContext = React.createContext();
 
 // custome hook
 export const useAuth = () => {
   return useContext(AuthContext);
 };
 
-const AuthProvider = ({ children }) => {
+function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
 
@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   //   signup
-  const singUp = async (email, password, username) => {
+  const signup = async (email, password, username) => {
     const auth = getAuth();
     await createUserWithEmailAndPassword(auth, email, password);
 
@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
   const value = {
     currentUser,
     login,
-    singUp,
+    signup,
     logout,
   };
 
@@ -68,5 +68,5 @@ const AuthProvider = ({ children }) => {
       {!loading && children}
     </AuthContext.Provider>
   );
-};
+}
 export default AuthProvider;
