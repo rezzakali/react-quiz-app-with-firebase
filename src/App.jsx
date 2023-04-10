@@ -40,7 +40,7 @@ function App() {
           }
         />
         <Route
-          path="/result"
+          path="/result/:id"
           element={
             <PrivateRoute>
               <Result />

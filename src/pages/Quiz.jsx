@@ -80,15 +80,10 @@ function Quiz() {
     const resultRef = ref(db, `result/${uid}`);
 
     await set(resultRef, {
-      [id]: uid,
+      [id]: qna,
     });
 
-    navigate({
-      pathname: '/result',
-      state: {
-        qna,
-      },
-    });
+    navigate(`/result/${id}`, { state: qna });
   };
 
   return (
@@ -100,6 +95,7 @@ function Quiz() {
           <h1>{qna[currentQuestion].title}</h1>
           <h4>Question can have multiple answers</h4>
           <Answers
+            input={true}
             options={qna[currentQuestion].options}
             changeHandler={handleAnswerChange}
           />
