@@ -26,9 +26,14 @@ function Videos() {
       >
         {videos.map((video) =>
           video.noq === 0 ? (
-            <Video title={video.title} noq={video.noq} id={video.youtubeID} />
+            <Video
+              title={video.title}
+              noq={video.noq}
+              id={video.youtubeID}
+              key={video.youtubeID}
+            />
           ) : (
-            <Link to="/quiz" key={video.youtubeID}>
+            <Link to={`/quiz/${video.youtubeID}`} key={video.youtubeID}>
               <Video title={video.title} noq={video.noq} id={video.youtubeID} />
             </Link>
           )
