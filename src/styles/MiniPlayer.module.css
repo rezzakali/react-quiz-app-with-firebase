@@ -19,6 +19,7 @@
 
 .open {
   display: none;
+  padding-left: 10px;
 }
 
 .close {
