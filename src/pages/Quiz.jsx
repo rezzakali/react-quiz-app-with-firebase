@@ -1,7 +1,7 @@
 import { getDatabase, ref, set } from 'firebase/database';
 import _ from 'lodash';
 import React, { useEffect, useReducer, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import Answers from '../components/Answers';
 import MiniPlayer from '../components/MiniPlayer';
 import ProgressBar from '../components/ProgressBar';
@@ -38,6 +38,9 @@ function Quiz() {
 
   const { currentUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const { state } = location;
+  const { videoTitle } = state;
 
   useEffect(() => {
     dispatch({
@@ -105,7 +108,7 @@ function Quiz() {
             progress={percentage}
             submit={submitQuizHandler}
           />
-          <MiniPlayer id={id} title={qna[currentQuestion].title} />
+          <MiniPlayer id={id} title={videoTitle} />
         </>
       )}
     </React.Fragment>
