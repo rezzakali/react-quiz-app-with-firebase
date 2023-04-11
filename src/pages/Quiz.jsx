@@ -105,7 +105,7 @@ function Quiz() {
             progress={percentage}
             submit={submitQuizHandler}
           />
-          <MiniPlayer />
+          <MiniPlayer id={id} title={qna[currentQuestion].title} />
         </>
       )}
     </React.Fragment>
